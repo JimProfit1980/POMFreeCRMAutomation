@@ -33,6 +33,9 @@ public class TestUtil extends TestBase {
 	public static String TEST_DATA_PATH = System.getProperty("user.dir") + "\\FreeCRMDataFile.xlsx";
 	public static Workbook workBook;
     public static Sheet sheet;
+    
+    // Turn flag on so you can get the logs of every event of the user story that takes place
+    public static boolean WEB_EVENT_LISTENER = false;
 	
 	public static String createFirstName()
 	{
@@ -72,7 +75,7 @@ public class TestUtil extends TestBase {
 	 * 
 	 * Gets Test data from an excel spreadsheet. sheetIndex (starts at zero) and is used for selecting the sheet that will be used in the excel spreadsheet
 	 * @param sheetIndex
-	 * @return Object (Test Data)
+	 * @return Object [Test Data]
 	 * @throws EncryptedDocumentException
 	 * @throws IOException
 	 */

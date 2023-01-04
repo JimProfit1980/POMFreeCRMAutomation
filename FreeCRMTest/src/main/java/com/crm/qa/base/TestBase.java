@@ -54,11 +54,13 @@ public class TestBase {
 			driver = new ChromeDriver();
 		}
 		
-		eDriver = new EventFiringWebDriver(driver);
-		// Now create object of 
-		eventListener = new WebEventListener();
-		eDriver.register(eventListener);
-		driver = eDriver;
+		if(TestUtil.WEB_EVENT_LISTENER == true) {
+			eDriver = new EventFiringWebDriver(driver);
+			// Now create object of 
+			eventListener = new WebEventListener();
+			eDriver.register(eventListener);
+			driver = eDriver;
+		}
 		
 		
 		driver.manage().window().maximize();
